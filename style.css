@@ -1,0 +1,301 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111; /* Dark background for header */
+    color: #fff;
+    padding: 30px 50px; /* Increased padding for more space */
+    font-size: 22px; /* Increased font size */
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.nav {
+    flex-grow: 1;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+}
+
+.nav_list li {
+    margin: 0 20px;
+}
+
+.nav_list a {
+    font-size: 20px; 
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: color 0.3s ease; 
+}
+
+
+.nav_list a:hover {
+    color: #FD6F00; 
+}
+
+.nav_list a.active {
+    color: #FD6F00; 
+    border-bottom: 3px solid #FD6F00; 
+}
+
+.hire_button {
+    background-color: #FD6F00;
+    color: #fff;
+    padding: 12px 20px; 
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px; 
+    transition: background-color 0.3s ease;
+}
+
+.hire_button:hover {
+    background-color: #e65d00; /* Darker on hover */
+}
+
+.hire_button_lnk{
+    display: inline-block;
+    color: #fff;
+    
+}
+
+/* Introduction section */
+.introduction {
+    display: flex; /* Align text and image side by side */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Align content vertically */
+    padding: 50px 20px; /* Added padding to improve spacing */
+    flex-wrap: wrap; /* Make it responsive */
+    margin: 20px; /* Margin around the section */
+}
+
+
+
+.intro_text {
+    text-align: left; /* Align text to the left */
+    margin-right: 50px; /* Space between text and image */
+    /* max-width: 500px;  */
+    /*Limit the width of the text section */
+}
+
+.intro_text span {
+    display: block;
+    margin-bottom: 10px; /* Add space between text elements */
+}
+
+
+.greeting {
+    color:#888; /* Light black color */
+    font-size: 24px; /* Decrease font size */
+}
+
+.name {
+    font-size: 48px; /* Increase size for "Bhavish Rai B" */
+    font-weight: bold; /* Optional: make it bold */
+
+}
+
+.role1 {
+    font-size: 96px; /* Adjust font size for role */
+    color: #FD6F00; /* Light gray for the role */
+    margin-top: 5px; /* Small gap between name and role */
+    font-weight: bold; /* Optional: make it bold */
+    /* display: block; */
+    
+}
+.role2 {
+    font-size: 24px; /* Adjust font size for "Engineer" */
+    margin-top: 5px;
+}
+
+/* CTA section styling */
+.cta_section {
+    display: flex;
+    flex-direction: row; 
+    /* Align buttons in a row for larger screens */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above the CTA section */
+}
+
+.cta_button {
+    width: auto;
+    background-color: #FD6F00;
+    color: #000000;
+    padding: 15px 30px; 
+    border-radius: 10px;
+    font-weight: bolder;
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 18px; 
+    transition: background-color 0.3s ease;
+}
+
+.cv_download {
+    width: auto;
+    background-color: #000000;
+    color: #FD6F00;
+    padding: 15px 30px; 
+    border-radius: 10px;
+    font-weight: bolder;
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 18px; 
+    transition: background-color 0.3s ease;
+}
+
+
+.cta_button:hover {
+    background-color: #e65d00; /* Darker on hover */
+}
+
+.cv_download:hover {
+    background-color: #222; /* Darker on hover */
+}
+
+
+
+.egg-image {
+    width: 600px; /* Increased width */
+    height: 800px; /* Increased height */
+    border-radius: 300px 300px 200px 200px; /* Adjusted for a more pronounced egg shape */
+    object-fit: cover; /* Ensure the image covers the area */
+    border: 5px solid #FD6F00; /* Border color */
+    margin-left: 20px; /* Space between text and image */
+}
+
+
+
+/* Statistics section */
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    background-color: #111; /* Dark gray for statistics */
+    padding: 40px 0;
+}
+
+.statistic {
+    text-align: center;
+}
+
+.statistic span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+
+/* Responsive styles */
+
+/* @media (max-width: 768px) {
+    .header {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 20px 0; 
+    }
+
+    .logo {
+        margin-bottom: 15px; 
+        font-size: 32px; 
+    }
+
+    .nav_list {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0;
+        margin-bottom: 20px; 
+    }
+
+    .nav_list li {
+        margin: 10px 0; 
+    }
+
+
+    .hire_button {
+        width: 100%; 
+        text-align: center; 
+        padding: 15px; 
+        font-size: 20px; 
+        background-color: #FD6F00; 
+        color: #fff;
+        border-radius: 5px; 
+        cursor: pointer; 
+    }
+
+    .hire_button:hover {
+        background-color: #e65d00;
+    }
+
+    .egg-image {
+        width: 100%; 
+        max-width: 300px; 
+        height: auto;
+        border-radius: 150px 150px 200px 200px;
+        object-fit: cover;
+        margin-top: 10px; 
+    }
+    
+    .introduction {
+        padding: 20px; 
+        margin: 0;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .intro_text {
+        text-align: center; 
+        margin-bottom: 20px;
+    }
+
+
+    
+    .cta_section {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; 
+        margin-top: 10px; 
+    }
+    
+    .cta_button, .cv_download {
+        width: 100%;
+        text-align: center; 
+        padding: 15px;
+        font-size: 18px; 
+        background-color: #FD6F00;
+        color: #fff;
+        border-radius: 5px; 
+        cursor: pointer; 
+        transition: background-color 0.3s ease; 
+    }
+    
+    .cta_button:hover, .cv_download:hover {
+        background-color: #e65d00;
+    }
+} */
