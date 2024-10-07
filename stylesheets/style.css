@@ -142,14 +142,25 @@ body {
 
 
 .greeting {
-    color:#888; /* Light black color */
+    color: #888; /* Light black color */
     font-size: 24px; /* Decrease font size */
+    transition: color 0.3s ease; /* Transition for color change */
+}
+
+.greeting:hover {
+    color: #FD6F00; /* Change color on hover */
 }
 
 .name {
     font-size: 48px; /* Increase size for "Bhavish Rai B" */
     font-weight: bold; /* Optional: make it bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transition for transform and color */
+}
 
+.name:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    color: #e65d00; /* Change color on hover */
 }
 
 .role1 {
@@ -158,12 +169,25 @@ body {
     margin-top: 5px; /* Small gap between name and role */
     font-weight: bold; /* Optional: make it bold */
     display: block;
-    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Deeper shadow for emphasis */
+    transition: transform 0.3s ease; /* Transition for transform */
 }
+
+.role1:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    color: #ffffff;
+}
+
 .role2 {
     font-size: 24px; /* Adjust font size for "Engineer" */
     margin-top: 5px;
+    transition: color 0.3s ease; /* Transition for color change */
 }
+
+.role2:hover {
+    color: #FD6F00; /* Change color on hover */
+}
+
 
 
 /* Social Media Icons */
@@ -199,38 +223,42 @@ body {
 
 .cta_button {
     width: auto;
-    background-color: #FD6F00;
-    color: #000000;
+    background-color: #FD6F00; /* Primary color */
+    color: #000000; /* Text color */
     padding: 10px 20px; 
-    border-radius: 10px;
-    font-weight: bolder;
-    border: 2px solid white;
-    cursor: pointer;
-    font-size: 18px; 
-    transition: background-color 0.3s ease;
+    border-radius: 10px; /* Rounded corners */
+    font-weight: bolder; /* Bold text */
+    border: 2px solid white; /* Border style */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added transition effects */
 }
 
 .cv_download {
     width: auto;
-    background-color: #000000;
-    color: #FD6F00;
+    background-color: #000000; /* Background color */
+    color: #FD6F00; /* Text color */
     padding: 10px 20px; 
-    border-radius: 10px;
-    font-weight: bolder;
-    border: 2px solid white;
-    cursor: pointer;
-    font-size: 18px; 
-    transition: background-color 0.3s ease;
+    border-radius: 10px; /* Rounded corners */
+    font-weight: bolder; /* Bold text */
+    border: 2px solid white; /* Border style */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added transition effects */
 }
-
 
 .cta_button:hover {
     background-color: #e65d00; /* Darker on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 4px 15px rgba(230, 93, 0, 0.5); /* Add a shadow effect */
 }
 
 .cv_download:hover {
     background-color: #222; /* Darker on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
 }
+
 
 
 @keyframes fallBounce {
@@ -238,14 +266,27 @@ body {
         transform: translateY(-100%); /* Start above the viewport */
         opacity: 0; /* Start invisible */
     }
-    50% {
+    20% {
         opacity: 1; /* Become visible */
+        transform: translateY(0); /* Set to the original position */
+    }
+    30% {
+        transform: translateY(25px); /* First bounce down */
+    }
+    40% {
+        transform: translateY(15px); /* Second bounce down */
+    }
+    50% {
+        transform: translateY(8px); /* Third bounce down */
+    }
+    60% {
+        transform: translateY(4px); /* Minor bounce */
     }
     70% {
-        transform: translateY(10px); /* Move down slightly */
+        transform: translateY(2px); /* Almost settle */
     }
     100% {
-        transform: translateY(0); /* End at the original position */
+        transform: translateY(0); /* Settle at the original position */
     }
 }
 
@@ -257,7 +298,7 @@ body {
     border: 5px solid #FD6F00; /* Border color */
     margin-left: 20px; /* Space between text and image */
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease; /* Smooth transitions for hover */
-    animation: fallBounce 1s ease forwards; /* Add animation for falling and bouncing */
+    animation: fallBounce 2s ease 0.5s forwards; /* Animation with delay (0.5s) */
 }
 
 .egg-image:hover {
@@ -266,6 +307,8 @@ body {
     filter: brightness(1.2) saturate(1.1); /* Slightly brighten and increase color saturation */
     border-color: #e65d00; /* Change border color on hover */
 }
+
+
 
 
 /* Statistics Section */
