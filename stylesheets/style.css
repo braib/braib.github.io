@@ -19,7 +19,7 @@ body {
     align-items: center;
     background-color: #111; /* Dark background for header */
     color: #fff;
-    padding: 30px 50px; /* Increased padding for more space */
+    padding: 20px 50px; /* Increased padding for more space */
     font-size: 22px; /* Increased font size */
 }
 
@@ -90,15 +90,16 @@ body {
     padding: 50px 20px; /* Added padding to improve spacing */
     flex-wrap: wrap; /* Make it responsive */
     margin: 20px; /* Margin around the section */
+    position: relative; /* Make the content and image positioning flexible */
 }
 
 
 
 .intro_text {
-    text-align: left; /* Align text to the left */
-    margin-right: 50px; /* Space between text and image */
-    /* max-width: 500px;  */
-    /*Limit the width of the text section */
+    text-align: left;
+    margin-right: 100px; /* Adjust the space between text and image */
+    margin-top: -50px; /* Move the text upwards */
+    position: relative; /* Make the content and image positioning flexible */
 }
 
 .intro_text span {
@@ -123,7 +124,7 @@ body {
     color: #FD6F00; /* Light gray for the role */
     margin-top: 5px; /* Small gap between name and role */
     font-weight: bold; /* Optional: make it bold */
-    /* display: block; */
+    display: block;
     
 }
 .role2 {
@@ -136,16 +137,16 @@ body {
     display: flex;
     flex-direction: row; 
     /* Align buttons in a row for larger screens */
-    justify-content: center; /* Center buttons horizontally */
+    justify-content: flex-start; /* Center buttons horizontally */
     gap: 20px; /* Space between buttons */
-    margin-top: 20px; /* Space above the CTA section */
+    margin-top: 50px; /* Space above the CTA section */
 }
 
 .cta_button {
     width: auto;
     background-color: #FD6F00;
     color: #000000;
-    padding: 15px 30px; 
+    padding: 10px 20px; 
     border-radius: 10px;
     font-weight: bolder;
     border: 2px solid white;
@@ -158,7 +159,7 @@ body {
     width: auto;
     background-color: #000000;
     color: #FD6F00;
-    padding: 15px 30px; 
+    padding: 10px 20px; 
     border-radius: 10px;
     font-weight: bolder;
     border: 2px solid white;
@@ -189,22 +190,42 @@ body {
 
 
 
-/* Statistics section */
+
+/* Statistics Section */
 .statistics {
-    display: flex;
-    justify-content: space-around;
-    background-color: #111; /* Dark gray for statistics */
-    padding: 40px 0;
+    display: flex; /* Align items in a row */
+    justify-content: space-around; /* Space between each item */
+    align-items: center; /* Vertically center items */
+    background-color: #1b1b1b; /* Dark background */
+    padding: 15px 30px; /* Adjust spacing */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 50px; /* Space above the statistics */
+    max-width: 700px;
+
 }
 
 .statistic {
-    text-align: center;
+    text-align: center; /* Center align each stat */
 }
 
-.statistic span {
-    display: block;
-    font-size: 24px;
-    font-weight: bold;
+.stat-number {
+    font-size: 28px; /* Larger font size for numbers */
+    color: #FD6F00; /* Orange color for numbers */
+    font-weight: bold; /* Bold numbers */
+    display: block; /* Ensure it's on its own line */
+}
+
+.stat-label {
+    font-size: 16px; /* Smaller font for label */
+    color: #fff; /* White text for labels */
+    display: block; /* Display each label on a new line */
+}
+
+.stat-separator {
+    height: 50px; /* Height of the vertical separator */
+    width: 1px; /* Thin separator line */
+    background-color: #555; /* Light gray line */
+    margin: 0 10px; /* Space between the statistics */
 }
 
 
