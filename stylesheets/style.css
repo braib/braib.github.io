@@ -17,16 +17,49 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #111; /* Dark background for header */
+    background-color: #1b1b1b; /* Dark background for header */
     color: #fff;
     padding: 20px 50px; /* Increased padding for more space */
     font-size: 22px; /* Increased font size */
 }
 
+
+
 .logo {
-    font-size: 32px;
+    font-size: 32px; /* Adjust the size of the logo text */
     font-weight: bold;
+
+
+    letter-spacing: 2px; /* Add space between the letters */
+    position: relative; /* For animation purposes */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
+
+.logo:before {
+    content: ''; /* Empty content for the effect */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px; /* Line height under the logo */
+    background-color: #FD6F00; /* Line color */
+    transition: width 0.3s ease; /* Smooth line expansion */
+}
+
+.logo:hover:before {
+    width: 100%; /* Expands the line fully on hover */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Slightly enlarges the logo on hover */
+    color: #FD6F00; /* Change the color of the logo text on hover */
+    text-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* Add a subtle shadow to the text */
+}
+
+
+
+
+
 
 .nav {
     flex-grow: 1;
@@ -40,7 +73,7 @@ body {
 }
 
 .nav_list li {
-    margin: 0 20px;
+    margin: 0px 3px;
 }
 
 .nav_list a {
@@ -65,7 +98,7 @@ body {
 .hire_button {
     background-color: #FD6F00;
     color: #fff;
-    padding: 12px 20px; 
+    padding: 5px 10px; 
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px; 
@@ -132,6 +165,28 @@ body {
     margin-top: 5px;
 }
 
+
+/* Social Media Icons */
+.social_media {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px; /* Space between icons */
+    margin: 20px 0; /* Add some margin around the icons */
+}
+
+.social-icon {
+    width: 30px; /* Set the size of the icons */
+    height: 30px;
+    border-radius: 50%; /* Circular icons */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+}
+
+
+
 /* CTA section styling */
 .cta_section {
     display: flex;
@@ -178,6 +233,21 @@ body {
 }
 
 
+@keyframes fallBounce {
+    0% {
+        transform: translateY(-100%); /* Start above the viewport */
+        opacity: 0; /* Start invisible */
+    }
+    50% {
+        opacity: 1; /* Become visible */
+    }
+    70% {
+        transform: translateY(10px); /* Move down slightly */
+    }
+    100% {
+        transform: translateY(0); /* End at the original position */
+    }
+}
 
 .egg-image {
     width: 500px; /* Increased width */
@@ -186,9 +256,16 @@ body {
     object-fit: cover; /* Ensure the image covers the area */
     border: 5px solid #FD6F00; /* Border color */
     margin-left: 20px; /* Space between text and image */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease; /* Smooth transitions for hover */
+    animation: fallBounce 1s ease forwards; /* Add animation for falling and bouncing */
 }
 
-
+.egg-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
+    filter: brightness(1.2) saturate(1.1); /* Slightly brighten and increase color saturation */
+    border-color: #e65d00; /* Change border color on hover */
+}
 
 
 /* Statistics Section */
@@ -201,11 +278,14 @@ body {
     border-radius: 10px; /* Rounded corners */
     margin-top: 50px; /* Space above the statistics */
     max-width: 700px;
-
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Add subtle shadow */
+    transition: transform 0.3s ease-in-out;
 }
+
 
 .statistic {
     text-align: center; /* Center align each stat */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .stat-number {
@@ -213,12 +293,14 @@ body {
     color: #FD6F00; /* Orange color for numbers */
     font-weight: bold; /* Bold numbers */
     display: block; /* Ensure it's on its own line */
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
 }
 
 .stat-label {
     font-size: 16px; /* Smaller font for label */
     color: #fff; /* White text for labels */
     display: block; /* Display each label on a new line */
+    transition: color 0.3s ease;
 }
 
 .stat-separator {
@@ -227,6 +309,33 @@ body {
     background-color: #555; /* Light gray line */
     margin: 0 10px; /* Space between the statistics */
 }
+
+/* Hover Effects */
+.statistics:hover {
+    transform: scale(1.03); /* Slight scaling effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Increase shadow on hover */
+}
+
+.statistic:hover .stat-number {
+    transform: translateY(-10px); /* Numbers move slightly upward on hover */
+    color: #e65d00; /* Darker shade of orange on hover */
+}
+
+.statistic:hover .stat-label {
+    color: #FD6F00; /* Change label color on hover */
+}
+
+.stat-separator {
+    transition: background-color 0.3s ease;
+}
+
+.stat-separator:hover {
+    background-color: #FD6F00; /* Orange separator when hovered */
+}
+
+
+
+
 
 
 
