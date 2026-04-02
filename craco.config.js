@@ -1,0 +1,25 @@
+// craco.config.js - Simplified version without backend features
+const path = require("path");
+
+module.exports = {
+  webpack: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+    configure: (webpackConfig) => {
+      // Optimize watch options for better performance
+      webpackConfig.watchOptions = {
+        ...webpackConfig.watchOptions,
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/build/**',
+          '**/dist/**',
+          '**/coverage/**',
+          '**/public/**',
+        ],
+      };
+      return webpackConfig;
+    },
+  },
+};
