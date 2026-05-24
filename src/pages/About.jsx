@@ -1,7 +1,7 @@
 import React from 'react';
-import { Github, Linkedin, BookOpen, Mail, ExternalLink, GraduationCap, Briefcase, Award, MonitorPlay } from 'lucide-react';
+import { Github, Linkedin, BookOpen, Mail, ExternalLink, GraduationCap, Briefcase, Award, MonitorPlay, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { personalInfo, about, publications, talks } from '../data';
+import { personalInfo, about, publications, talks, patents} from '../data';
 
 const socialLinks = [
   { icon: Github, href: personalInfo.github, label: 'GitHub' },
@@ -221,6 +221,57 @@ const AboutSection = () => {
               ))}
             </div>
           </motion.div>
+
+          {/* Patents */}
+          {patents && patents.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <h3 className="text-regular mb-8 flex items-center gap-3">
+                <Shield size={24} className="text-[#38FF62]" />
+                Patents
+              </h3>
+              <div className="space-y-6">
+                {patents.map((patent) => (
+                  <div key={patent.id} className="card">
+                    <h4 className="text-body font-semibold mb-3">{patent.title}</h4>
+                    {patent.inventors && (
+                      <p className="label-small mb-2">{patent.inventors}</p>
+                    )}
+                    <div className="flex flex-wrap gap-4 mt-2">
+                      {patent.filingDate && (
+                        <p className="label-small text-white/50">
+                          Filed: {patent.filingDate}
+                        </p>
+                      )}
+                      {patent.applicationNumber && (
+                        <p className="label-small text-white/50">
+                          {patent.applicationNumber}
+                        </p>
+                      )}
+                      {patent.status && (
+                        <p className="label-small text-[#38FF62]">{patent.status}</p>
+                      )}
+                    </div>
+                    {patent.link && (
+                      <a
+                        href={patent.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-ghost p-0 flex items-center gap-2 mt-4"
+                      >
+                        <ExternalLink size={14} /> VIEW PATENT
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
         </div>
       </div>
     </section>

@@ -501,35 +501,36 @@ export const skills = {
 export const publications = [
   {
     id: 1,
-    title: "CoMuRoS: LLM-Based Generalizable Hierarchical Task Planning and Execution for Heterogeneous Robot Teams with Event-Driven Replanning",
-    authors: "Suraj Borate, Bhavish Rai B, Vipul Pardeshi, Madhu Vadali",
-    venue: "ArXiv",
+    title: "CoMuRoS: A LLM-Driven Hierarchical Architecture for Adaptive Multi-Robot Collaboration",
+    authors: "Suraj Borate, Bhavish Rai B, Vipul Pardeshi and Madhu Vadali",
+    venue: "IROS 2025 LEAPRIDE Poster",
     year: 2025,
-    link: "https://arxiv.org/abs/2511.22354"
+    // link: "https://openreview.net/pdf?id=a0GqX5jGDb"
+    link: "https://openreview.net/forum?id=a0GqX5jGDb"
   },
   {
     id: 2,
-    title: "CoMuRoS: A LLM-Driven Hierarchical Architecture for Adaptive Multi-Robot Collaboration",
-    authors: "Suraj Borate, Bhavish Rai B, Vipul Pardeshi, Madhu Vadali",
-    venue: "IROS 2025 LEAPRIDE Poster",
+    title: "LLM-Based Generalizable Hierarchical Task Planning and Execution for Heterogeneous Robot Teams with Event-Driven Replanning",
+    authors: "Suraj Borate, Bhavish Rai B, Vipul Pardeshi and Madhu Vadali",
+    venue: "ArXiv",
     year: 2025,
-    // link: "https://openreview.net/forum?id=a0GqX5jGDb"
-    link: "https://openreview.net/pdf?id=a0GqX5jGDb"
+    link: "https://arxiv.org/pdf/2511.22354"
   },
   {
     id: 3,
     title: "Application of LLM Driven Robot Architecture for the Study of Robot Interventions in Making Task",
-    authors: "Suraj Borate, Bhavish Rai B, Vipul Pardeshi, Madhu Vadali",
-    venue: "Under preparation",
-    // year: 2025,
+    authors: "Suraj Borate, Bhavish Rai B*, Megha Bansal*, Harshil Shafi, Saloni Shinde, Aditi Kothiyal and Madhu Vadali",
+    venue: "Submitted to IEEE Transactions on Learning Technologies",
+    year: 2026,
     // link: "https://openreview.net/forum?id=a0GqX5jGDb"
   },
   {
     id: 4,
-    title: "CoMuRoS-Nav: Combined Task Planning and Navigation using LLM Driven Task Planner and a Novel Multi-formation-Multirobot Path Planner",
-    authors: "Suraj Borate, Bhavish Rai B, Vipul Pardeshi, Madhu Vadali",
-    venue: "Under preparation",
-    // year: 2025,
+    title: "Integrated Task and Kinodynamic Path Planning for Heterogeneous Multi-Robot Formations",
+    authors: "Suraj Borate, Bhavish Rai B and Madhu Vadali",
+    venue: "Accepted for ICRA 2026 Workshop (SCI-MARS)",
+    // venue: "IEEE Robotics and Automation Letters (RA-L) [Under preparation]",
+    year: 2026,
     // link: "https://openreview.net/forum?id=a0GqX5jGDb"
   },
 ];
@@ -541,7 +542,8 @@ export const talks = [
     event: "ROSCon India2025",
     speakers: "Suraj Borate, Bhavish Rai B, Vipul Pardeshi, Madhu Vadali",
     date: "December 2025",
-    link: "https://www.youtube.com/watch?v=dA2D3FWFkds"
+    // link: "https://www.youtube.com/watch?v=dA2D3FWFkds"
+    link: "https://youtu.be/CIL2l_JLuAo?si=oviCFe4jaKSHHEFs"
   },
   // {
   //   id: 2,
@@ -549,4 +551,16 @@ export const talks = [
   //   event: "National Robotics Week",
   //   date: "April 2023"
   // }
+];
+
+export const patents = [
+  {
+    id: 1,
+    title: "A Multi-Robot Coordination System for Task Planning and Execution",
+    inventors: "Suraj Borate, Madhu Vadali and Bhavish Rai B",
+    // applicationNumber: "IN202X0XXXXXX",
+    filingDate: "07.05.2026",
+    status: "Filed", // or "Published", "Granted"
+    // link: "https://link-to-patent-if-available"
+  }
 ];
