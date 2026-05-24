@@ -5,6 +5,7 @@ import ProjectsSection from './Projects';
 import SkillsSection from './Skills';
 import AboutSection from './About';
 import ContactSection from './Contact';
+import ResearchSection from './Research';
 // import Publications from './Publications';
 // import Blog from './Blog';
 
@@ -33,6 +34,7 @@ const Home = () => {
       <ProjectsSection />
       <SkillsSection />
       <AboutSection />
+      <ResearchSection />
       {/* <Publications /> */}
       {/* <Blog /> */}
       <ContactSection />

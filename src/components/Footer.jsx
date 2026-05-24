@@ -45,6 +45,7 @@ const Footer = () => {
     { name: 'PROJECTS', route: 'projects' },
     { name: 'SKILLS', sectionId: 'skills' },
     { name: 'ABOUT', sectionId: 'about' },
+    { name: 'RESEARCH', sectionId: 'research' },
     { name: 'CONTACT', sectionId: 'contact' }
   ];
 

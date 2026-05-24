@@ -16,7 +16,7 @@ const Header = () => {
 
       // Only detect sections on home page
       if (location.pathname === '/') {
-        const sections = ['home', 'projects', 'skills', 'about', 'contact'];
+        const sections = ['home', 'projects', 'skills', 'about', 'research', 'contact'];
         const scrollPosition = window.scrollY + 100;
 
         for (const section of sections) {
@@ -44,7 +44,7 @@ const Header = () => {
       setActiveSection('projects');
     } else if (location.pathname === '/') {
       // Will be set by scroll handler
-      const sections = ['home', 'projects', 'skills', 'about', 'contact'];
+      const sections = ['home', 'projects', 'skills', 'about', 'research', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -165,6 +165,20 @@ const Header = () => {
             >
               ABOUT
               {activeSection === 'about' && location.pathname === '/' && (
+                <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#38FF62]" />
+              )}
+            </button>
+            <button
+              onClick={() => scrollToSection('research')}
+              className={`font-bold transition-all relative ${
+                activeSection === 'research' && location.pathname === '/'
+                  ? 'text-[#38FF62]'
+                  : 'text-white hover:text-[#38FF62]'
+              }`}
+              style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', letterSpacing: '0.1em', textTransform: 'uppercase' }}
+            >
+              RESEARCH
+              {activeSection === 'research' && location.pathname === '/' && (
                 <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#38FF62]" />
               )}
             </button>

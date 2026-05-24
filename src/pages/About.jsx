@@ -1,12 +1,11 @@
 import React from 'react';
-import { Github, Linkedin, BookOpen, Mail, ExternalLink, GraduationCap, Briefcase, Award, MonitorPlay, Shield } from 'lucide-react';
+import { Github, Linkedin, Mail, GraduationCap, Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { personalInfo, about, publications, talks, patents} from '../data';
+import { personalInfo, about } from '../data';
 
 const socialLinks = [
   { icon: Github, href: personalInfo.github, label: 'GitHub' },
   { icon: Linkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
-  // { icon: BookOpen, href: personalInfo.scholar, label: 'Google Scholar' }
 ];
 
 const AboutSection = () => {
@@ -36,7 +35,6 @@ const AboutSection = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="flex flex-col md:flex-row gap-8 mb-8">
-                {/* Profile Image */}
                 <div className="flex-shrink-0">
                   <motion.div
                     className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-[#38FF62] shadow-lg shadow-[#38FF62]/20"
@@ -54,10 +52,8 @@ const AboutSection = () => {
                   <h3 className="text-regular mb-6">Background</h3>
                   <div className="space-y-4">
                     {about.bio.split('\n\n').map((paragraph, index) => (
-  <p key={index} className="text-body">
-    {paragraph}
-  </p>
-))}
+                      <p key={index} className="text-body">{paragraph}</p>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -110,7 +106,7 @@ const AboutSection = () => {
             </motion.div>
           </div>
 
-          {/* Sidebar - Contact */}
+          {/* Sidebar - Connect */}
           <div className="space-y-8">
             <motion.div
               className="card sticky top-24"
@@ -148,130 +144,6 @@ const AboutSection = () => {
               </div>
             </motion.div>
           </div>
-        </div>
-
-        {/* Publications & Talks */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
-          {/* Publications */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h3 className="text-regular mb-8 flex items-center gap-3">
-              <BookOpen size={24} className="text-[#38FF62]" />
-              Publications
-            </h3>
-            <div className="space-y-6">
-              {publications.map((pub) => (
-                <div key={pub.id} className="card">
-                  <h4 className="text-body font-semibold mb-3">{pub.title}</h4>
-                  <p className="label-small mb-2">{pub.authors}</p>
-                  <p className="text-body mb-4">
-                    {pub.venue}, {pub.year}
-                  </p>
-                  {pub.link && (
-                    <a
-                      href={pub.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-ghost p-0 flex items-center gap-2"
-                    >
-                      <ExternalLink size={14} /> READ PAPER
-                    </a>
-                  )}
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Talks */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <h3 className="text-regular mb-8 flex items-center gap-3">
-              <Award size={24} className="text-[#38FF62]" />
-              Talks & Demos
-            </h3>
-            <div className="space-y-6">
-              {talks.map((talk) => (
-                <div
-                  key={talk.id}
-                  className="card block transition-all"
-                >
-                  <h4 className="text-body font-semibold mb-3">{talk.title}</h4>
-                  <p className="label-small text-white/50 mb-2">{talk.speakers}</p>
-                  <p className="text-body mb-2">{talk.event}</p>
-                  <p className="label-small text-[#38FF62] mb-4">{talk.date}</p>
-                  {talk.link && (
-                    <a
-                      href={talk.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-ghost p-0 flex items-center gap-2"
-                    >
-                      <MonitorPlay size={14} /> WATCH TALK
-                    </a>
-                  )}
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Patents */}
-          {patents && patents.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <h3 className="text-regular mb-8 flex items-center gap-3">
-                <Shield size={24} className="text-[#38FF62]" />
-                Patents
-              </h3>
-              <div className="space-y-6">
-                {patents.map((patent) => (
-                  <div key={patent.id} className="card">
-                    <h4 className="text-body font-semibold mb-3">{patent.title}</h4>
-                    {patent.inventors && (
-                      <p className="label-small mb-2">{patent.inventors}</p>
-                    )}
-                    <div className="flex flex-wrap gap-4 mt-2">
-                      {patent.filingDate && (
-                        <p className="label-small text-white/50">
-                          Filed: {patent.filingDate}
-                        </p>
-                      )}
-                      {patent.applicationNumber && (
-                        <p className="label-small text-white/50">
-                          {patent.applicationNumber}
-                        </p>
-                      )}
-                      {patent.status && (
-                        <p className="label-small text-[#38FF62]">{patent.status}</p>
-                      )}
-                    </div>
-                    {patent.link && (
-                      <a
-                        href={patent.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-ghost p-0 flex items-center gap-2 mt-4"
-                      >
-                        <ExternalLink size={14} /> VIEW PATENT
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
         </div>
       </div>
     </section>
